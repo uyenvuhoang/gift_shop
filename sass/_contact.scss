@@ -1,0 +1,67 @@
+.contact{
+    background-color: #fff;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #ed423c;
+
+}
+.contact__map{
+    border-top: 1px solid #ed423c;
+    border-bottom: 1px solid #ed423c;
+    padding: 20px 0;
+    background-color: #fff;
+}
+
+.contact__comment textarea{
+    outline: none;
+    border: 1px solid #ed423c;
+    border-radius: 5px;
+    width: 100%;
+    height: 110px;
+}
+
+.contact__button{
+    margin: 30px 28px 40px;
+}
+
+.contact__button span{
+    color: #fff;
+    background-color: #ed423c;
+    border: 1px solid #ed423c;
+    border-radius: 50px;
+    padding: 14px 40px;
+}
+
+.icon__media{
+    display: flex;
+    justify-content: start;
+    padding-left: 0;
+    padding-top: 10px;
+    a{
+        text-decoration: none;
+        margin-right: 15px;
+        .icon{
+            width: 60px;
+            height: 60px;
+            border: 0;
+            border-radius: 50%;
+            background-color: $color__01;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            i{
+                font-size: 24px;
+                color: $color__03;
+            }
+        }
+        .icon:hover{
+            background-color: $color__03;
+            border: 1px solid $color__01;
+            i{
+                color: $color__01;
+            }
+        }
+        
+    }
+}

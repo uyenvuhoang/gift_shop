@@ -1,0 +1,175 @@
+.demo{
+    opacity: 0.6;
+}
+
+.product_detail_info{
+    padding-left: 30px;
+    .product__detail-name{
+        // font-size: 1.575rem;
+        font-weight: 700;
+        color: $color__01;
+        margin-bottom: 30px;
+        display:-webkit-box;
+        -webkit-line-clamp:2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-break: break-word;
+    }
+    .product__rating{
+        .product__rating-rate{
+            color: $color__01;
+            
+        }
+        .product__rating-comment{
+            i{
+                color: $color__01;
+            }
+        }
+        .product__rating-like{
+            i{
+                color: $color__01;
+            }
+        }
+    }
+    .product__detail-price{
+        display: flex;
+        justify-content: space-between;
+        background-color: #979696;
+        margin: 20px 0;
+        padding: 10px 50px;
+        .detail__price-old{
+            color: #111;
+            span{
+                text-decoration: line-through;
+                color: #111;
+            }
+        }
+        .detail__price-new{
+            span{
+                color: $color__01;
+            }
+        }
+    }
+    .product__quanity{
+    margin-top: 150px;
+    margin-bottom: 30px;
+        .quanity__group{
+            display: flex;
+            justify-content: flex-start;
+            label{
+                font-size: 25px;
+                color: #111;
+                font-weight: bold;
+                margin-right: 15px;
+            }
+            span{
+                padding: 8px 50px;
+                border: 1px solid $color__01;
+                color: #111;
+            }
+            .number{
+                width:150px;
+                text-align: center;
+                border: 1px solid $color__01;
+                background: none;
+                color: $color__01;
+                border-radius: 5px;
+            }
+
+        }
+    }
+    .product__detail-description{
+        .product__detail-header{
+            display: flex;
+            justify-content: space-between;
+            padding-right: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid $color__01;
+            margin-bottom: 30px;
+            i{
+                font-size: 30px;
+                color: $color__01;
+            }
+            .collapse{
+                background-color: #ffffff;
+                color: #111;
+                padding: 15px 10px;
+            }
+        }
+    }
+    .product__detail-download{
+        padding: 10px 15px;
+        border: 1px solid $color__01;
+        border-radius: 5px;
+        width: 100%;
+        margin-bottom: 30px;
+        a{
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: $color__01;
+            cursor: pointer;
+            i{
+                margin-right: 15px;
+            }
+        }
+    }
+    .product__detail-download:hover{
+        background-color: #fff;
+    }
+    .product__button{
+        .btn__addtocart{
+            width: 100%;
+            border: 1px solid $color__01;
+            display: block;
+            padding: 10px 0;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 10px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: $color__01;
+            background-color: #fff;
+            i{
+                margin-right: 15px;
+            }
+        }
+        .btn__buynow{
+            width: 100%;
+            // border: 1px solid $color__01;
+            display: block;
+            padding: 10px 0;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 10px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #fff;
+            background-color: $color__01;
+            i{
+                margin-right: 15px;
+            }
+        }
+        .btn__addtocart:hover{
+            background-color: $color__01;
+            color: #fff;
+            box-shadow: $box_shadow_full;
+
+        }
+        .btn__buynow:hover{
+            border: 1px solid $color__01;
+            background: #fff;
+            color: $color__01;
+            box-shadow: $box_shadow_full;
+        }
+    }
+}
+
+.imageBox{
+    object-fit: cover;
+    transform: scale(1);
+}
+.imageBox:hover{
+    transform: scale(1.2);
+    transition: all ease .3s;
+}

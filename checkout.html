@@ -1,0 +1,306 @@
+<div ng-controller="CheckouCtrl">
+    <div class="section__title">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h5><a href="#!/">Home</a> / <span>Check out</span></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="check__out mt-3">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-7 col-12">
+                    <form name="myForm" class="form" novalidate></form>
+                        <div class="check_out_info">
+                            <div class="row mb-3">
+                                <div class="col-6"><h4 class="color_red">Billing info</h4></div>
+                                <div class="col-6 text-end pe-5"><p class="color_gray">Step 1 of 4</p></div>
+                            </div>
+                            <div class="row">
+                                    <div class="infor_main">
+                                        <div class="form_group d-flex justify-content-between">
+                                            <div class="form_control d-block">
+                                                <label for="">First name</label> <br>
+                                                <input type="text" name="firstName" ng-model="firstName" class="input_controll" placeholder="Enter your first name">
+                                                <div ng-show="myForm.firstName.$dirty && myForm.firstName.$invalid">
+                                                    <span class="color_red" ng-show="myForm.firstName.$error.required">First name can be not blank!</span>
+                                                </div>
+                                            </div>
+                                            <div class="form_control">
+                                                <label for="">Last name</label> <br>
+                                                <input type="text" name="lastName" ng-model="lastName" class="input_controll" placeholder="Enter your first name">
+                                                <div ng-show="myForm.lastName.$dirty && myForm.lastName.$invalid">
+                                                    <span class="color_red" ng-show="myForm.lastName.$error.required">First name can be not blank!</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form_group d-flex justify-content-between">
+                                            <div class="form_control d-block">
+                                                <label for="">Email</label> <br>
+                                                <input type="text" name="myEmail" ng-model="myEmail" class="input_controll" placeholder="Enter your first email" required>
+                                                <div ng-show="myForm.firstName.$dirty && myForm.myEmail.$invalid">
+                                                    <span class="error" ng-show="myForm.myEmail.$error.required">First name can be not blank!</span>
+                                                </div>
+                                            </div>
+                                            <div class="form_control">
+                                                <label for="">Phone</label> <br>
+                                                <input type="text" name="myPhone" ng-model="myPhone" class="input_controll" placeholder="Enter your first phone" required>
+                                                <div ng-show="myForm.myPhone.$dirty && myForm.myPhone.$invalid">
+                                                    <span class="error" ng-show="myForm.myPhone.$error.required">Phone can be not blank!</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form_group d-flex justify-content-between">
+                                            <div class="form_control d-block">
+                                                <label for="">Address</label> <br>
+                                                <input type="text" name="myAddress" ng-model="myAddress" class="input_controll" placeholder="Enter your address" required>
+                                                <div ng-show="myForm.myAddress.$dirty && myForm.myAddress.$invalid">
+                                                    <span class="error" ng-show="myForm.myAddress.$error.required">Address can be not blank!</span>
+                                                </div>
+                                            </div>
+                                            <div class="form_control">
+                                                <label for="">State / Country</label> <br>
+                                                <input type="text" name="myCountry" ng-model="myCountry" class="input_controll" placeholder="Enter your State / Country" required>
+                                                <div ng-show="myForm.myCountry.$dirty && myForm.myCountry.$invalid">
+                                                    <span class="error" ng-show="myForm.myCountry.$error.required">First name can be not blank!</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form_group d-flex justify-content-between">
+                                            <div class="form_control d-block">
+                                                <label for="">Town / City</label> <br>
+                                                <input type="text" name="myCity" ng-model="myCity" class="input_controll" placeholder="Enter your first name" required>
+                                                <div ng-show="myForm.myCity.$dirty && myForm.myCity.$invalid">
+                                                    <span class="error" ng-show="myForm.myCity.$error.required">Town / City can be not blank!</span>
+                                                </div>
+                                            </div>
+                                            <div class="form_control">
+                                                <label for="">Zip / Postal code</label> <br>
+                                                <input type="text" name="myZipCode" ng-model="myZipCode" class="input_controll" placeholder="Enter your Zip / Postal code" required>
+                                                <div ng-show="myForm.myZipCode.$dirty && myForm.myZipCode.$invalid">
+                                                    <span class="error" ng-show="myForm.myZipCode.$error.required">First name can be not blank!</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="infor_orther">
+                                        <div class="check_adrress" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                            <input type="checkbox" class="filter_check" name="myCheck" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"> <label>Ship to different address?</label>
+                                        </div>
+                                        <div class="collapse" id="collapseExample">
+                                            <div class="bg-white border__radius_10 p-3">
+                                                <div class="form_group d-flex justify-content-between">
+                                                    <div class="form_control d-block">
+                                                        <label for="">First name</label> <br>
+                                                        <input type="text" name="firstName" ng-model="firstName" class="input_controll" placeholder="Enter your first name">
+                                                        <div ng-show="myForm.firstName.$dirty && myForm.firstName.$invalid">
+                                                            <span class="error" ng-show="myForm.firstName.$error.required">First name can be not blank!</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form_control">
+                                                        <label for="">Last name</label> <br>
+                                                        <input type="text" name="lastName" ng-model="lastName" class="input_controll" placeholder="Enter your first name">
+                                                        <div ng-show="myForm.lastName.$dirty && myForm.lastName.$invalid">
+                                                            <span class="error" ng-show="myForm.lastName.$error.required">First name can be not blank!</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+            
+                                                <div class="form_group d-flex justify-content-between">
+                                                    <div class="form_control d-block">
+                                                        <label for="">Email</label> <br>
+                                                        <input type="text" name="myEmail" ng-model="myEmail" class="input_controll" placeholder="Enter your first email" required>
+                                                        <div ng-show="myForm.firstName.$dirty && myForm.myEmail.$invalid">
+                                                            <span class="error" ng-show="myForm.myEmail.$error.required">First name can be not blank!</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form_control">
+                                                        <label for="">Phone</label> <br>
+                                                        <input type="text" name="myPhone" ng-model="myPhone" class="input_controll" placeholder="Enter your first phone" required>
+                                                        <div ng-show="myForm.myPhone.$dirty && myForm.myPhone.$invalid">
+                                                            <span class="error" ng-show="myForm.myPhone.$error.required">Phone can be not blank!</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+            
+                                                <div class="form_group d-flex justify-content-between">
+                                                    <div class="form_control d-block">
+                                                        <label for="">Address</label> <br>
+                                                        <input type="text" name="myAddress" ng-model="myAddress" class="input_controll" placeholder="Enter your address" required>
+                                                        <div ng-show="myForm.myAddress.$dirty && myForm.myAddress.$invalid">
+                                                            <span class="error" ng-show="myForm.myAddress.$error.required">Address can be not blank!</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form_control">
+                                                        <label for="">State / Country</label> <br>
+                                                        <input type="text" name="myCountry" ng-model="myCountry" class="input_controll" placeholder="Enter your State / Country" required>
+                                                        <div ng-show="myForm.myCountry.$dirty && myForm.myCountry.$invalid">
+                                                            <span class="error" ng-show="myForm.myCountry.$error.required">First name can be not blank!</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+            
+                                                <div class="form_group d-flex justify-content-between">
+                                                    <div class="form_control d-block">
+                                                        <label for="">Town / City</label> <br>
+                                                        <input type="text" name="myCity" ng-model="myCity" class="input_controll" placeholder="Enter your first name" required>
+                                                        <div ng-show="myForm.myCity.$dirty && myForm.myCity.$invalid">
+                                                            <span class="error" ng-show="myForm.myCity.$error.required">Town / City can be not blank!</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form_control">
+                                                        <label for="">Zip / Postal code</label> <br>
+                                                        <input type="text" name="myZipCode" ng-model="myZipCode" class="input_controll" placeholder="Enter your Zip / Postal code" required>
+                                                        <div ng-show="myForm.myZipCode.$dirty && myForm.myZipCode.$invalid">
+                                                            <span class="error" ng-show="myForm.myZipCode.$error.required">First name can be not blank!</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    </div>
+                                
+                            </div>
+                            <div class="row mb-3 mt-5">
+                                <div class="col-6"><h4 class="color_red">Payment method</h4></div>
+                                <div class="col-6 text-end pe-5"><p class="color_gray">Step 2 of 4</p></div>
+                            </div>
+                            <div class="row">
+                                <div class="form_group d-flex justify-content-start mb-3">
+                                    <input type="radio" name="payment" value="pay_delive" class="filter_check" checked><label for="">Payment to delivery</label>
+                                </div>
+                                <div class="form_group d-flex justify-content-start mb-3">
+                                    <input type="radio" name="payment" value="pay_delive" class="filter_check" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <div style="width:150px; height: 50px"><img src="./public/image/PngItem_15888.png" alt="" class="img__full" ></div> 
+                                </div>
+                                    <div class="collapse" id="collapseOne">
+                                    <div class="bg-white mt-3 p-3">
+                                        <div class="row">
+                                            <div class="col-lg-6 pe-lg-5">
+                                                <div class="form-group mb-4">
+                                                    <p>Cart number</p>
+                                                    <input type="text" class="w-100 input_controll" placeholder="Enter your card number" >
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6 pe-lg-5">
+                                                <div class="form-group mb-4">
+                                                    <p>Cart holder</p>
+                                                    <input type="text" class="w-100 input_controll" placeholder="Enter your card holder">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 pe-lg-5">
+                                                <div class="form-group mb-4">
+                                                    <p>Expiration date</p>
+                                                    <input type="text" class="w-100 input_controll" placeholder="DD/MM/YY">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 pe-lg-5">
+                                                <div class="form-group mb-4">
+                                                    <p>CVC</p>
+                                                    <input type="text" class="w-100 input_controll" placeholder="Enter CVC">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="row mb-3 mt-5">
+                                <div class="col-6"><h4 class="color_red">Order notes</h4></div>
+                                <div class="col-6 text-end pe-5"><p class="color_gray">Step 3 of 4</p></div>
+                            </div>
+                            <div class="row">
+                                <h5>Additional notes about the product you ordered if applicable:</h5>
+                                <textarea name="mycomment_checkout" ng-model="mycomment_checkout" id="mycomment_checkout" placeholder="Order note: " rows="6" style="width: 100%;"></textarea>
+                            </div>
+                            <div class="row mb-3 mt-5">
+                                <div class="col-6"><h4 class="color_red">Confirmation</h4></div>
+                                <div class="col-6 text-end pe-5"><p class="color_gray">Step 4 of 4</p></div>
+                            </div>
+                            <div class="row">
+                                <h5>We are getting to the end. Just few clicks and your order is ready!</h5>
+                                <div class="col-12 d-flex justify-content-start">
+                                    <input type="checkbox" name="check_end" ng-model="check_end" class="filter_check"> <label for="">I agree with our terms and conditions and privacy policy</label> 
+                                </div>
+                            </div>
+                            <input type="submit" ng-click="orderSuccess()"  value="Commplete Order" class="py-2 px-5 btn btn-primary d-flex align-items-center justify-content-center mt-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <!-- ng-disabled="myForm.uFirstName.$error.required || myForm.uemail.$error.required || myForm.uemail.$invalid || myForm.uAddr.$error.required || myForm.uAddr.$error.minlength || myForm.uLastName.$error.required || myForm.uPhone.$error.required || myForm.uPhone.$error.minlength || myForm.uPhone.$invalid" 
+                            data-bs-toggle="modal" data-bs-target="#OrderModal"-->
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="col-md-5 col-12">
+                    <div class="oder_summary border__radius_10 col-12 p-4" >
+                        <div class="order_summary_header text-center pt-2 pb-2 border_bottom">
+                            <h3>Order summary</h3>
+                        </div>
+                        <div class="order_summary_content heght_300 pt-2 pb-2">
+                            <div class="product_order d-flex justify-content-start mb-3" ng-repeat="product in myCart">
+                                <div class="order_img">
+                                    <img src="{{product.pic}}" alt="{{product.name}}" class="img__full border__radius_10">
+                                </div>
+                                <div class="order__detail d-flex justify-content-between ms-3">
+                                    <div class="detail_info">
+                                        <div class="order__detail-name pe-1">{{product.name}}</div>
+                                        <div class="order__detail-quanity mt-3">x {{product.countItems}}</div>
+                                        <div class="order__detail-priceNew color_red">$ {{product.price_new}}</div>
+                                    </div>
+                                    <div class="order_action ms-2 color_red d-flex justify-content-center align-items-center">
+                                        <i class="fa-solid fa-trash" ng-click="removeItemCart(product)"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="order_summary_footer border_top">
+                            <div class="row p-4">
+                                <div class="col-12 d-flex justify-content-between mb-2">
+                                    <div class="subtotal">Subtotal:</div>
+                                    <div class="result text-end color_red">$ {{Subtotal}}</div>
+                                </div>
+                                <div class="col-12 d-flex justify-content-between mb-2">
+                                    <div class="Tax">Tax:</div>
+                                    <div class="Tax ps-5">10 %</div>
+                                    <div class="result text-end color_red">$ {{Subtotal*0.1}}</div>
+                                </div>
+                                <div class="col-12 d-flex justify-content-between mb-2 border_bottom">
+                                    <div class="Shipping">Shipping:</div>
+                                    <div class="result text-end color_red">$ 0</div>
+                                </div>
+                                <div class="col-12 d-flex justify-content-between">
+                                    <div class="Total">Total:</div>
+                                    <div class="result text-end color_red">$ {{Subtotal + Subtotal*0.1}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Billing info -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Notify!</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <h4 class="color_red">Thanks for your order. It will be deliveried to you around 2-4 days.</h4>
+            </div>
+            <div class="modal-footer">
+                <a href="#/!" class="btn btn-secondary" onClick="$('.modal').modal('hide')">Close</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+</div>

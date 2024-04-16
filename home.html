@@ -1,0 +1,269 @@
+<div class="home" ng-controller="homeCtrl">
+    <!-- slider banner -->
+    <div class="slide_banner">
+        <div class="owl-carousel owl-theme">
+            <div class="item h_350" ng-repeat="banner in images">
+                <img src="{{banner.picture}}" alt="slide_banner" class="img__full">
+            </div>
+        </div>
+    </div>
+
+    <!-- Top best seler -->
+    <section class="best_seller">
+        <div class="container">
+            <div class="title">
+                Best Seller
+            </div>
+            <div class="owl-carousel owl-theme">
+                <div class="item" ng-repeat="product in ListPro_20">
+                    <div class="card__product" data-id="{{product.id}}">
+                        <div class="card__img">
+                            <a href="#!Products/ProductDetail?id={{product.id}}"><img src="{{product.pic}}"
+                                    alt="{{product.name}}" class="img-fluid border__radius_10"></a>
+                            <!-- <a href="#" class="icon_comparision"><i
+                                    class="fa-solid fa-circle-plus"></i></a> -->
+                        </div>
+                        <div class="card__detail">
+                            <a href="#!Products/ProductDetail?id={{product.id}}"
+                                class="product__name">{{product.name}}</a>
+                            <div class="product__price">
+                                <div class="price_old">$ {{product.price_old}}</div>
+                                <div class="price_new">$ {{product.price_new}}</div>
+                            </div>
+                            <div class="product__footer">
+                                <div class="product__rate">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                </div>
+                                <a class="product__add" ng-click="AddCart(product, 1)">add cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>                 
+            </div>
+        </div>
+        
+    </section>
+
+
+    <!-- Just for me -->
+    <section class="just__for__you bg-white">
+        <div class="container">
+            <div class="title">
+                Just for you
+            </div>
+            <div class="owl-carousel owl-theme p-2">
+                <div class="item" ng-repeat="product in filteredForYou">
+                    <div class="card__product" data-id="{{product.id}}">
+                        <div class="card__img">
+                            <a href="#!Products/ProductDetail?id={{product.id}}"><img src="{{product.pic}}"
+                                    alt="{{product.name}}" class="img-fluid border__radius_10"></a>
+                            <!-- <a href="#" class="icon_comparision"><i
+                                    class="fa-solid fa-circle-plus"></i></a> -->
+                        </div>
+                        <div class="card__detail">
+                            <a href="#!Products/ProductDetail?id={{product.id}}"
+                                class="product__name">{{product.name}}</a>
+                            <div class="product__price">
+                                <div class="price_old">$ {{product.price_old}}</div>
+                                <div class="price_new">$ {{product.price_new}}</div>
+                            </div>
+                            <div class="product__footer">
+                                <div class="product__rate">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                </div>
+                                <a class="product__add" ng-click="AddCart(product, 1)">add cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>                 
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- new product -->
+    <section class="new_product">
+        <div class="container">
+            <div class="title">
+                New Products
+            </div>
+            <div class="owl-carousel owl-theme p-2">
+                <div class="item" ng-repeat="product in filteredNewItems">
+                    <div class="card__product" data-id="{{product.id}}">
+                        <div class="card__img">
+                            <a href="#!Products/ProductDetail?id={{product.id}}"><img src="{{product.pic}}"
+                                    alt="{{product.name}}" class="img-fluid border__radius_10"></a>
+                            <!-- <a href="#" class="icon_comparision"><i
+                                    class="fa-solid fa-circle-plus"></i></a> -->
+                        </div>
+                        <div class="card__detail">
+                            <a href="#!Products/ProductDetail?id={{product.id}}"
+                                class="product__name">{{product.name}}</a>
+                            <div class="product__price">
+                                <div class="price_old">$ {{product.price_old}}</div>
+                                <div class="price_new">$ {{product.price_new}}</div>
+                            </div>
+                            <div class="product__footer">
+                                <div class="product__rate">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                </div>
+                                <a class="product__add" ng-click="AddCart(product)">add cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>                 
+            </div>
+        </div>
+        
+    </section>
+
+
+    <!-- top brands -->
+    <section class="top__brand">
+        <div class="container">
+        <div class="title mb-5">Top Brand</div>
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-3 mb-4" ng-repeat="brand in listBrand">
+                    <div class="logo_brand col-12 bg-white">
+                        <a href="#!Products"><img src="{{brand.picture}}" alt="{{brand.name}}" class="img__full"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Order Guide -->
+    <section class="oder__guide">
+        <div class="container">
+            <div class="title mb-4">Oder Guide</div>
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
+                    <div class="card__oderguide col-12">
+                        <img src="./public/image/Muahang01.png" alt="" class="img__full border__radius_10">
+                        <p class="desc_order mt-xl-3 text-center">Step 1: Search and select the desired product</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
+                    <div class="card__oderguide col-12">
+                        <img src="./public/image/Muahanng02.png" alt="" class="img__full border__radius_10">
+                        <p class="desc_order mt-3 text-center">Step 2: Add products to cart</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
+                    <div class="card__oderguide col-12">
+                        <img src="./public/image/Muahang03.png" alt="" class="img__full border__radius_10">
+                        <p class="desc_order mt-3 text-center">Step 3: Fill in the necessary information</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
+                    <div class="card__oderguide col-12">
+                        <img src="./public/image/Muahang04.png" alt="" class="img__full border__radius_10">
+                        <p class="desc_order mt-3 text-center">Step 4: Chibi shop delivers goods to the place at the request of the customer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- News Shop blog -->
+    <section class="news__shop">
+        <div class="container">
+            <div class="title mb-5">News blog</div>
+            <div class="news__content mt_30">
+                <div class="news__content__left">
+                    <div class="news_img">
+                        <img src="./public/image//tt_tuong03_1.jpg" alt="" class="img__full border__radius_10">
+                    </div>
+                    <div class="news__detail">
+                        <h3 class="news__title">
+                            <a href="#">Novelty in decorative style</a>
+    
+                        </h3>
+                        <p class="news__desc">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                            the industry's standard dummy text ever since the 1500s,
+                        </p>
+                        <div class="news_date">
+                            <p class="news__date_time">Date: 12/05/2022</p>
+                            <a href="#" class="btn__add">See more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="news__content__right">
+                    <div class="news__content_item mb-3">
+                        <div class="news__img">
+                            <img src="./public/image/tt_tuong01.jpg" alt="" class="img__full border__radius_10">
+                        </div>
+                        <div class="news__detail">
+                            <h3 class="news__title">
+                                <a href="">Novelty in decorative style</a>
+    
+                            </h3>
+                            <p class="news__desc">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                                been the industry's standard dummy text ever since the 1500s,
+                            </p>
+                            <div class="news_date">
+                                <p class="news__date_time">Date: 12/05/2022</p>
+                                <a href="#" class="btn__add">See more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news__content_item mb-3">
+                        <div class="news__img">
+                            <img src="./public/image/tt_tuong02.jpg" alt="" class="img__full border__radius_10">
+                        </div>
+                        <div class="news__detail">
+                            <h3 class="news__title">
+                                <a href="">Novelty in decorative style</a>
+                            </h3>
+                            <p class="news__desc">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                                been the industry's standard dummy text ever since the 1500s,
+                            </p>
+                            <div class="news_date">
+                                <p class="news__date_time">Date: 12/05/2022</p>
+                                <a href="#" class="btn__add">See more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news__content_item">
+                        <div class="news__img">
+                            <img src="./public/image/tt_tuong03.jpg" alt="" class="img__full border__radius_10">
+                        </div>
+                        <div class="news__detail">
+                            <h3 class="news__title">
+                                <a href="">Novelty in decorative style</a>
+                            </h3>
+                            <p class="news__desc">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                                been the industry's standard dummy text ever since the 1500s,
+                            </p>
+                            <div class="news_date">
+                                <p class="news__date_time">Date: 12/05/2022</p>
+                                <a href="#" class="btn__add">See more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+
+
+</div>

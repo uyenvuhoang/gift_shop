@@ -1,0 +1,341 @@
+.bg_main{
+    background-color: $color__01;
+    padding: 10px 0;
+}
+.bg_white{
+    background-color: #fff;
+}
+.color_red{
+    color: $color__01;
+}
+.color_gray{
+    color: $text_color_02;
+}
+
+.box__croll{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 16px;
+    background-color: $color__01;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.box__croll:hover{
+    transform: scale(1.1);
+}
+
+section{
+    padding: 30px 0;
+    .title{
+        font-size: 35px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        color: $text_color_01;
+        text-transform: uppercase;
+    }
+}
+
+.section__title{
+    background-color: $color__01;
+    color: $color__03;
+    padding: 10px 0;
+    a{
+        text-decoration: none;
+        color: #ffffff;
+        cursor: pointer;
+    }
+    a:hover{
+        color: $color__04;
+    }
+    span{
+        color: rgb(33, 32, 32);
+    }
+}
+.img__full{
+    width: 100%;
+    height: 100%;
+}
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background: $color__01; }
+.border__radius_10{
+    border-radius: 10px;
+}
+.card__product{
+    border: 1px solid $color__01;
+    border-radius: 15px;
+    padding: 15px;
+    .card__img{
+        width: 100%;
+        height: 203px;
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        flex-shrink: 0;
+        img{
+            object-fit: cover;
+            transform: scale(1);
+        }
+        img:hover{
+            transform: scale(1.2);
+            transition: all ease .3s;
+        }
+        .icon_comparision{
+            position: absolute;
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: $color__01;
+            top: 5px;
+            right: 8px;
+            }
+        .icon_comparision:hover i{
+            transform: scale(1.2);
+        }
+    }
+    
+    .card__detail{
+        flex: 1;
+        .product__name{
+            display: block;
+            font-size: 1.25rem;
+            padding-top: 10px;
+            margin-top: 10px;
+            text-decoration: none;
+            text-transform: capitalize;
+            cursor: pointer;
+            color: $text_color_01;
+            display:-webkit-box;
+            -webkit-line-clamp:1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-break: break-word;
+        }
+        .product__name:hover{
+            color: $color__01;
+        }
+        .product__price{
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 30px;
+            .price_old{
+                color: #999;
+                font-size: 1.2rem;
+                text-decoration: line-through;
+            }
+            .price_new{
+                color: $color__01;
+                font-size: 1.2rem;
+            }
+        }
+        .product__footer{
+            display: flex;
+            justify-content: space-between;
+            flex-shrink: 1;
+            .product__rate{
+                display: flex;
+                justify-content: space-between;
+                padding-top: 7px;
+                i{
+                    font-size: 1rem;
+                    color: $color__01;
+                }
+            }
+            .product__add{
+                padding: 5px 10px;
+                font-size: 0.75rem;
+                text-decoration: none;
+                text-transform: capitalize;
+                border-radius: 20px;
+                background-color: $color__01;
+                color: #fff;
+            }
+            .product__add:hover{
+                background-color: $color__03;
+                border: 1px solid $color__01;
+                color: $color__01;
+            }
+        }
+    }
+}
+.card__product:hover{
+box-shadow: $box_shadow_full;
+}
+
+
+.card__product_col-3{
+    border: 1px solid $color__01;
+    border-radius: 15px;
+    padding: 15px;
+    .card__img{
+        position: relative;
+        width: 100%;
+        height: 192px;
+        border-radius: 10px;
+        overflow: hidden;
+        img{
+            object-fit: cover;
+            transform: scale(1);
+        }
+        img:hover{
+            transform: scale(1.2);
+            transition: all ease .3s;
+        }
+        .icon_comparision{
+            position: absolute;
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: $color__01;
+            top: 5px;
+            right: 8px;
+            }
+        .icon_comparision:hover i{
+            transform: scale(1.2);
+        }
+    }
+    
+    .card__detail{
+        .product__name{
+            display: block;
+            font-size: 1.25rem;
+            margin-top: 20px;
+            text-decoration: none;
+            text-transform: capitalize;
+            cursor: pointer;
+            color: $text_color_01;
+            display:-webkit-box;
+            -webkit-line-clamp:1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-break: break-word;
+        }
+        .product__name:hover{
+            color: $color__01;
+        }
+        .product__price{
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0;
+            .price_old{
+                color: #999;
+                font-size: 1.2rem;
+                text-decoration: line-through;
+            }
+            .price_new{
+                color: $color__01;
+                font-size: 1.2rem;
+            }
+        }
+        .product__footer{
+            display: flex;
+            justify-content: space-between;
+            flex-shrink: 1;
+            .product__rate{
+                display: flex;
+                justify-content: space-between;
+                padding-top: 7px;
+                i{
+                    font-size: 1.2rem;
+                    color: $color__01;
+                }
+            }
+            .product__add{
+                padding: 5px 10px;
+                font-size: 0.75rem;
+                text-decoration: none;
+                text-transform: capitalize;
+                border-radius: 20px;
+                background-color: $color__01;
+                color: #fff;
+                border: 1px solid $color__01;
+                cursor: pointer;
+            }
+            .product__add:hover{
+                background-color: $color__03;
+                border: 1px solid $color__01;
+                color: $color__01;
+            }
+        }
+    }
+}
+.card__product-3:hover{
+    box-shadow: $box_shadow_full;
+    }
+.heght_300{
+    min-height: 300px;
+}
+
+
+.border_bottom{
+    border-bottom: 1px solid $color__01;
+}
+.border_top{
+    border-top: 1px solid $color__01;
+}
+
+.owl-carousel .owl-nav button.owl-prev, .owl-carousel .owl-nav button.owl-next{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: $color__01;
+    color: #fff;
+    position: absolute;
+    top: 33%;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pro_select{
+    padding: 8px 15px;
+    border: 1px solid $color__01;
+    border-radius: 10px;
+    margin-right: 10px;
+    font-size: 1.25rem;
+    color: $color__01;
+}
+.product__navigation{
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    .btn_page{
+        width: 50px;
+        padding: 7px;
+        background-color: $color__01;
+        color: #fff;
+        text-decoration: none;
+        cursor: pointer;
+        text-align: end;
+    }
+    .btn_page:hover{
+        background-color: #fff;
+        color: $color__01;
+    }
+}
+.product__showmore{
+    color: $color__01;
+}
+.brand-name{
+    color: $color__01;
+}
+
+.border_radius_50{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.bg_yellow{
+    background-color: $color__04;
+}
+.f_14px{
+    font-size: 14px;
+}

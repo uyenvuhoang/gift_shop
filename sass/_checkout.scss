@@ -1,0 +1,45 @@
+.input_controll{
+    width: 95%;
+    border: none;
+    border-bottom: 1px solid #111;
+    margin: 10px 0;
+    padding: 7px 10px;
+    background: none;
+}
+.input_controll:focus{
+    background: #fff;
+    outline: none;
+    box-shadow: 2px 2px 4px $color__01;  
+}
+
+.form_control{
+    width: 50%;
+}
+.check_adrress{
+    width: 90%;
+    padding: 15px;
+    border: 1px solid $color__01;
+    border-radius: 10px;
+    text-decoration: none;
+    color: $color__01;
+    margin-top: 15px;
+    input{
+        border: 1px solid $color__01;
+        outline: none;
+
+    }
+}
+
+.oder_summary{
+    min-height: 500px;
+    background-color: #fff;
+    border: 1px solid $color__01;
+}
+
+.order_img{
+    width: 100px;
+    height: 100px;
+}
+.order__detail{
+    width: 80%;
+}

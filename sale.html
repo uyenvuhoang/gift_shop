@@ -1,0 +1,273 @@
+<div class="sales" ng-controller="salesCtrl">
+    <!-- title các trang  -->
+    <div class="section__title">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h5><a href="#!/">Home</a> / <span>Sales</span></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- top brands -->
+    <section class="top__brand_sale">
+        <div class="container">
+        <div class="title">Top Brand</div>
+            <div class="row">
+                <div class="col-md-2 col-3 mb-3" ng-repeat="brand in listBrand">
+                    <div class="logo_brand col-12 border bg-white">
+                        <a href="#!Products"><img src="{{brand.picture}}" alt="{{brand.name}}" class="img__full border__radius_10"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Top best seller -->
+    <section class="best_seller_sale bg-white">
+        <div class="container">
+            <div class="title">
+                Best Seller
+            </div>
+            <div class="owl-carousel owl-theme p2">
+                <div class="item" ng-repeat="product in ListPro_20">
+                    <div class="card__product" data-id="{{product.id}}">
+                        <div class="card__img">
+                            <a href="#!Products/ProductDetail?id={{product.id}}"><img src="{{product.pic}}"
+                                    alt="{{product.name}}" class="img__full border__radius_10"></a>
+                            <!-- <a href="#" class="icon_comparision"><i
+                                    class="fa-solid fa-circle-plus"></i></a> -->
+                        </div>
+                        <div class="card__detail">
+                            <a href="#!Products/ProductDetail?id={{product.id}}"
+                                class="product__name">{{product.name}}</a>
+                            <div class="product__price">
+                                <div class="price_old">$ {{product.price_old}}</div>
+                                <div class="price_new">$ {{product.price_new}}</div>
+                            </div>
+                            <div class="product__footer">
+                                <div class="product__rate">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                </div>
+                                <a class="product__add" ng-click="AddCart(product, 1)">add cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>                 
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- Teddy bear -->
+    <section class="teddybears">
+        <div class="container">
+            <div class="d-flex justify-content-between">
+                <div class="title">
+                Teddy Bears
+            </div>
+            <div class="show_more">
+                <a href="#!Products">show more</a>
+            </div>
+        </div>   
+        <div class="owl-carousel owl-theme">
+            <div class="item" ng-repeat="product in listCate_Stuffet">
+                <div class="card__product" data-id="{{product.id}}">
+                    <div class="card__img">
+                        <a href="#!Products/ProductDetail?id={{product.id}}"><img src="{{product.pic}}"
+                                alt="{{product.name}}" class="img__full border__radius_10"></a>
+                        <!-- <a href="#" class="icon_comparision"><i
+                                class="fa-solid fa-circle-plus"></i></a> -->
+                    </div>
+                    <div class="card__detail">
+                        <a href="#!Products/ProductDetail?id={{product.id}}"
+                            class="product__name">{{product.name}}</a>
+                        <div class="product__price">
+                            <div class="price_old">$ {{product.price_old}}</div>
+                            <div class="price_new">$ {{product.price_new}}</div>
+                        </div>
+                        <div class="product__footer">
+                            <div class="product__rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <a class="product__add" ng-click="AddCart(product, 1)">add cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>                 
+        </div>
+        </div>
+    </section>
+    <!-- Wax Rose -->
+    <section class="Waxrose bg-white">
+        <div class="container">
+            <div class="d-flex justify-content-between">
+                <div class="title">
+                    Wax Rose
+                </div>
+            <div class="show_more">
+                <a href="#!Products">show more</a>
+            </div>
+        </div>   
+        <div class="owl-carousel owl-theme">
+            <div class="item" ng-repeat="product in listCate_Wasrose">
+                <div class="card__product" data-id="{{product.id}}">
+                    <div class="card__img">
+                        <a href="#!Products/ProductDetail?id={{product.id}}"><img src="{{product.pic}}"
+                                alt="{{product.name}}" class="img__full border__radius_10"></a>
+                    </div>
+                    <div class="card__detail">
+                        <a href="#!Products/ProductDetail?id={{product.id}}"
+                            class="product__name">{{product.name}}</a>
+                        <div class="product__price">
+                            <div class="price_old">$ {{product.price_old}}</div>
+                            <div class="price_new">$ {{product.price_new}}</div>
+                        </div>
+                        <div class="product__footer">
+                            <div class="product__rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <a class="product__add" ng-click="AddCart(product, 1)">add cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>                 
+        </div>
+        </div>
+    </section>
+    <!-- Wax Rose -->
+    <section class="home_decor">
+        <div class="container">
+            <div class="d-flex justify-content-between">
+                <div class="title">
+                    Home Decor
+                </div>
+            <div class="show_more">
+                <a href="#!Products">show more</a>
+            </div>
+        </div>   
+        <div class="owl-carousel owl-theme">
+            <div class="item" ng-repeat="product in listCate_Homedecor">
+                <div class="card__product" data-id="{{product.id}}">
+                    <div class="card__img">
+                        <a href="#!Products/ProductDetail?id={{product.id}}"><img src="{{product.pic}}"
+                                alt="{{product.name}}" class="img__full border__radius_10"></a>
+                    </div>
+                    <div class="card__detail">
+                        <a href="#!Products/ProductDetail?id={{product.id}}"
+                            class="product__name">{{product.name}}</a>
+                        <div class="product__price">
+                            <div class="price_old">$ {{product.price_old}}</div>
+                            <div class="price_new">$ {{product.price_new}}</div>
+                        </div>
+                        <div class="product__footer">
+                            <div class="product__rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <a class="product__add" ng-click="AddCart(product, 1)">add cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>                 
+        </div>
+        </div>
+    </section>
+    <!-- Wax Rose -->
+    <section class="Personalitems bg-white">
+        <div class="container">
+            <div class="d-flex justify-content-between">
+                <div class="title">
+                    Personal items
+                </div>
+            <div class="show_more">
+                <a href="#!Products">show more</a>
+            </div>
+        </div>   
+        <div class="owl-carousel owl-theme">
+            <div class="item" ng-repeat="product in listCate_Personalitems">
+                <div class="card__product" data-id="{{product.id}}">
+                    <div class="card__img">
+                        <a href="#!Products/ProductDetail?id={{product.id}}"><img src="{{product.pic}}"
+                                alt="{{product.name}}" class="img__full border__radius_10"></a>
+                    </div>
+                    <div class="card__detail">
+                        <a href="#!Products/ProductDetail?id={{product.id}}"
+                            class="product__name">{{product.name}}</a>
+                        <div class="product__price">
+                            <div class="price_old">$ {{product.price_old}}</div>
+                            <div class="price_new">$ {{product.price_new}}</div>
+                        </div>
+                        <div class="product__footer">
+                            <div class="product__rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <a class="product__add" ng-click="AddCart(product, 1)">add cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>                 
+        </div>
+        </div>
+    </section>
+    <!-- Wax Rose -->
+    <section class="Business_Gifts">
+        <div class="container">
+            <div class="d-flex justify-content-between">
+                <div class="title">
+                    Business Gifts
+                </div>
+            <div class="show_more">
+                <a href="#!Products">show more</a>
+            </div>
+        </div>   
+        <div class="owl-carousel owl-theme">
+            <div class="item" ng-repeat="product in listCate_Businessgifts">
+                <div class="card__product" data-id="{{product.id}}">
+                    <div class="card__img">
+                        <a href="#!Products/ProductDetail?id={{product.id}}"><img src="{{product.pic}}"
+                                alt="{{product.name}}" class="img__full border__radius_10"></a>
+                    </div>
+                    <div class="card__detail">
+                        <a href="#!Products/ProductDetail?id={{product.id}}"
+                            class="product__name">{{product.name}}</a>
+                        <div class="product__price">
+                            <div class="price_old">$ {{product.price_old}}</div>
+                            <div class="price_new">$ {{product.price_new}}</div>
+                        </div>
+                        <div class="product__footer">
+                            <div class="product__rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <a class="product__add" ng-click="AddCart(product, 1)">add cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>                 
+        </div>
+        </div>
+    </section>
+</div>

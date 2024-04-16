@@ -1,0 +1,55 @@
+.gift__about{
+    margin-top: 70px;
+}
+
+.about__text{
+    width: 50%;
+}
+
+.about__title1{
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Dancing Script', cursive;
+    font-size: 40px;
+    margin: 10px 15%;
+    font-weight: bold;
+    color: #ed423c;
+    position: relative;
+    padding-bottom: 5px;
+    transition: 0.5s ease;
+}
+
+.about__title2{
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Dancing Script', cursive;
+    font-size: 40px;
+    margin: 10px 40%;
+    font-weight: bold;
+    color: #ed423c;
+    position: relative;
+    padding-bottom: 5px;
+    transition: 0.5s ease;
+}
+
+.about__pic1 img{
+    padding: 70px 0;
+}
+
+.about__pic3 img{
+    padding: 30px 0;
+}
+
+.about__content{
+    color: #000;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.about__content p{
+    color: #000;
+    font-weight: 500;
+    font-size: 18px;
+    text-indent: 40px;
+    margin-bottom: 0;
+}

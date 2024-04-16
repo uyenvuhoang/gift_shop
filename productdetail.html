@@ -1,0 +1,264 @@
+<div class="product" ng-controller="productDetailCtrl">
+    <!-- title các trang  -->
+    <div class="section__title">
+        <div class="container">
+            <div class="row">
+                <div class="col-12" ng-repeat="product in pro_detail">
+                    <h5><a href="#!/">Home</a> / <span>product</span> /<span>{{product.category}}</span>/
+                        {{product.name}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="product_detail">
+        <div class="container">
+            <div class="row">
+                <div class="product_detail_info col-12" ng-repeat="product in pro_detail">
+                    <div class="row">
+                        <div class="col-md-6" W>
+                             <div class="col-12">
+                                <div class="row">
+                                    <div class="col-md-9 col-9">
+                                        <div class="mySlides overflow-hidden">
+                                            <img id="imageBox" ng-src="{{product.pic}}" class="imageBox img__full border__radius_10" alt="{{product.name}}">
+                                          </div>
+                                    </div>
+                                    <div class="col-md-3 col-3">
+                                        <div class="row">
+                                            <div class="col-md-12 mb-4">
+                                                <img class=" img__full" ng-src="{{product.pic1}}"  onclick="currentSlide(this)" alt="{{product.name}}">
+                                            </div>
+                                            <div class="col-md-12 mb-4">
+                                                <img class="img__full" ng-src="{{product.pic2}}"  onclick="currentSlide(this)" alt="{{product.name}}">
+                                            </div>
+                                            <div class="col-md-12">
+                                                <img class="img__full" ng-src="{{product.pic3}}" onclick="currentSlide(this)" alt="{{product.name}}">
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="row mt-4">
+                                    <div class="product_detail_review col-12 bg_yellow mt-1 border__radius_10 p-3">
+                                        <div class="row">
+                                            <div class="col-12 reivew">
+                                                <div class="row">
+                                                    <div class="product_ratings">
+                                                        <h4>Product Ratings</h4>
+                                                        <div class="rating d-flex justify-content-start color_red">
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star-half-stroke"></i>
+                                                        </div>
+                                                        <div class="row m-3">
+                                                            <div class="col-2">
+                                                                <div class="rating_author border_radius_50 text-center">
+                                                                    <img src="./public/image/avatar_1.jpg" alt=""
+                                                                        class="img_full border_radius_50">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-10 bg-white border__radius_10 p-2">
+                                                                <div class="rating_comment">
+                                                                    <div class="col-12">
+                                                                        <h5>Anh Khoa</h5>
+                                                                        <div class="d-flex justify-content-start color_red mt-2">
+                                                                            <i class="fa-solid fa-star"></i>
+                                                                            <i class="fa-solid fa-star"></i>
+                                                                            <i class="fa-solid fa-star"></i>
+                                                                            <i class="fa-solid fa-star"></i>
+                                                                            <i class="fa-solid fa-star-half-stroke"></i>
+                                                                        </div>
+                                                                        <div class="comment_rating mt-2">
+                                                                            <p class="f_14px">Lorem ipsum dolor sit amet,
+                                                                                consectetur adipisicing elit. Debitis impedit
+                                                                                soluta, dolorum quis beatae excepturi iusto odio
+                                                                                reiciendis incidunt iure sit quia? Impedit expedita
+                                                                                rerum, in ex officiis nihil nulla.</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row m-3">
+                                                            <div class="col-2">
+                                                                <div class="rating_author border_radius_50 text-center">
+                                                                    <img src="./public/image/avatar_1.jpg" alt=""
+                                                                        class="img_full border_radius_50">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-10 bg-white border__radius_10 p-2">
+                                                                <div class="rating_comment">
+                                                                    <div class="col-12">
+                                                                        <h5>Anh Khoa</h5>
+                                                                        <div class="d-flex justify-content-start color_red mt-2">
+                                                                            <i class="fa-solid fa-star"></i>
+                                                                            <i class="fa-solid fa-star"></i>
+                                                                            <i class="fa-solid fa-star"></i>
+                                                                            <i class="fa-solid fa-star"></i>
+                                                                            <i class="fa-solid fa-star-half-stroke"></i>
+                                                                        </div>
+                                                                        <div class="comment_rating mt-2">
+                                                                            <p class="f_14px">Lorem ipsum dolor sit amet,
+                                                                                consectetur adipisicing elit. Debitis impedit
+                                                                                soluta, dolorum quis beatae excepturi iusto odio
+                                                                                reiciendis incidunt iure sit quia? Impedit expedita
+                                                                                rerum, in ex officiis nihil nulla.</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mt-5">
+                                        <div class="row">
+                                            <div class="review_submit col-12">
+                                                <h4>Your rating</h4>
+                                                <div class="d-flex justify-content-start color_red mb-3 mt-2">
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                                </div>
+                                                <h4>Your review</h4>
+                                                <textarea name="MyReivew" id="MyReivew" ng-model="MyReivew" rows="4"
+                                                    class="p-3 border-1" style="width: 100%;"
+                                                    placeholder="please let us know do you feel about this product..."></textarea>
+                                                <button class="btn btn-primary" ng-click="mySubmit">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="product_detail_info">
+                                <div class="col-12">
+                                    <h2 class="product__detail-name col-12">{{product.name}}</h2>
+                                    <div class="product__rating col-12">
+                                        <div class="row">
+                                            <div class="product__rating-rate col-6">
+                                                <span>4.5</span>
+                                                <span>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                                </span>
+                                            </div>
+                                            <div class="product__rating-comment col-3">
+                                                <span>200</span>
+                                                <i class="fa-solid fa-comment"></i>
+                                            </div>
+                                            <div class="product__rating-like col-3">
+                                                <span>{{product.rate}}</span>
+                                                <span><i class="fa-solid fa-thumbs-up"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product__detail-price col-12">
+                                        <div class="detail__price-old">Price old: <span>$ {{product.price_old}}</span>
+                                        </div>
+                                        <div class="detail__price-new">Price: <span>$ {{product.price_new}}</span></div>
+                                    </div>
+                                    <div class="product__quanity col-12">
+                                        <div class="quanity__group">
+                                            <label for="">Quanity: </label>
+                                            <div>
+                                                <button class="btn btn-danger" ng-click="remove()">-</button>
+                                                <span class="px-4">{{quanity}}</span>
+                                                <button class="btn btn-danger" ng-click="add()">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product__detail-description">
+                                        <div class="product__detail-header">
+                                            <h5>Product Description</h5>
+                                            <i class="fa-solid fa-caret-down" data-bs-toggle="collapse"
+                                                href="#pro_descshow"></i>
+                                        </div>
+                                        <div id="pro_descshow" class="collapse col-12">
+                                            <ul>
+                                                <li ng-repeat="desc in product.desc">{{desc}}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product__detail-download col-12 mt-5">
+                                        <a href="./document/SP001.pdf" target="_blank"><i class="fa-solid fa-download"></i> Download specifications </a>
+                                    </div>
+
+                                    <div class="product__button">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-12">
+                                                <a class="btn__addtocart" ng-click="AddCart(product, quanity)"><i
+                                                        class="fa-solid fa-cart-plus"></i> Add to cart</a>
+                                            </div>
+                                            <div class="col-sm-6 col-12">
+                                                <a href='#!Products/Checkout' class="btn__buynow"
+                                                    ng-click="AddCart(product, quanity)"></i>Buy Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="releadted_poduct">
+        <div class="container">
+            <div class="title">Related Products</div>
+            <div class="owl-carousel owl-theme">
+                <div class="item" ng-repeat="product in ListReleated01">
+                    <div class="card__product" data-id="{{product.id}}">
+                        <div class="card__img">
+                            <a href="#!Products/ProductDetail?id={{product.id}}"><img src="{{product.pic}}"
+                                    alt="{{product.name}}" class="img-fluid border__radius_10"></a>
+                            <!-- <a href="#" class="icon_comparision"><i
+                                        class="fa-solid fa-circle-plus"></i></a> -->
+                        </div>
+                        <div class="card__detail">
+                            <a href="#!Products/ProductDetail?id={{product.id}}"
+                                class="product__name">{{product.name}}</a>
+                            <div class="product__price">
+                                <div class="price_old">$ {{product.price_old}}</div>
+                                <div class="price_new">$ {{product.price_new}}</div>
+                            </div>
+                            <div class="product__footer">
+                                <div class="product__rate">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                </div>
+                                <a class="product__add" ng-click="AddCart(product, 1)">add cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+</div>

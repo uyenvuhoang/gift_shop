@@ -1,0 +1,243 @@
+<div class="product" ng-controller="productsCtrl">
+  <!-- title các trang  -->
+  <div class="section__title">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h5><a href="#!/">Home</a> / <span>Product category</span></h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Noi dung trang -->
+  <section class="product__category_content">
+    <div class="container">
+      <div class="row">
+        <div class="pro__navbar col-lg-3 col-md-12 col-12">
+          <div class="col-md-6 col-6">
+            <div class="pro__nav__brand mt-5">
+              <h3>Type</h3>
+              <div class="top__brand_filter mt-3">
+                <div class="filter__brand_check">
+                  <label
+                    class="container-filter d-flex justify-content-start"
+                    ng-repeat="type in getTypeCategories()"
+                  >
+                    <input
+                      type="checkbox"
+                      ng-model="filterType[type]"
+                      class="filter_check"
+                    />
+                    <span class="brand-name ms-2">{{type}}</span>
+                    <span class="checkmark"></span>
+                    <!-- <span class="quantity">6</span> -->
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-12">
+            <div class="pro__nav__brand mt-5">
+              <h3>Brands</h3>
+              <div class="row">
+                <div class="col-12">
+                  <div class="top__brand_filter mt-3">
+                    <div class="filter__brand_check">
+                      <label
+                        class="container-filter d-flex justify-content-start w-100"
+                        ng-repeat="brand in getBrandCategories()"
+                      >
+                        <input
+                          type="checkbox"
+                          ng-model="filterBrand[brand]"
+                          class="filter_check"
+                        />
+                        <span class="brand-name ms-2">{{brand}}</span>
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        <div class="pro__main col-lg-9 col-md-12 col-12 mt-5">
+          <div class="col-12">
+            <div class="row mb-3">
+              <div class="col-sm-8 col-8"></div>
+              <div class="col-sm-4 col-4 ps-5">
+                <label for="">View: </label>
+                <select
+                  ng-model="pageSize"
+                  id="pageSize"
+                  class="pro_select"
+                  ng-change="repaginate()"
+                  convert-to-number
+                >
+                  <option value="12" select>12 items</option>
+                  <option value="24">24 items</option>
+                  <option value="36">36 items</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div
+                class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12 mb-4"
+                ng-repeat="product in listProduct | filter: mySearch | filter: filterByBrandCategory | filter: filterByTypeCategory | limitTo: pageSize : begin"
+              >
+                <div class="card__product_col-3" data-id="{{product.id}}">
+                  <div class="card__img">
+                    <a href="#!Products/ProductDetail?id={{product.id}}"
+                      ><img
+                        src="{{product.pic}}"
+                        alt="{{product.name}}"
+                        class="img__full border__radius_10"
+                    /></a>
+                    <a
+                      class="icon_comparision"
+                      ng-click="addToCompare(product, $index)"
+                      ><i class="fa-solid fa-circle-plus"></i
+                    ></a>
+                  </div>
+                  <div class="card__detail">
+                    <a
+                      href="#!Products/ProductDetail?id={{product.id}}"
+                      class="product__name"
+                      >{{product.name}}</a
+                    >
+                    <div class="product__price">
+                      <div class="price_old">$ {{product.price_old}}</div>
+                      <div class="price_new">$ {{product.price_new}}</div>
+                    </div>
+                    <div class="product__footer">
+                      <div class="product__rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                      </div>
+                      <a class="product__add" ng-click="AddCart(product, 1)"
+                        >add</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- start navigation -->
+            <div class="row">
+              <div class="product__footer d-flex justify-content-between mt-3">
+                <div class="product__navigation">
+                  <a class="btn_page" ng-click="first_pro()"> First </a>
+                  <a class="btn_page" ng-click="prev_pro()"> Prev </a>
+                  <a class="btn_page" ng-click="next_pro()"> Next </a>
+                  <a class="btn_page" ng-click="last_pro()"> Last </a>
+                </div>
+                <div class="product__showmore">
+                  <p>view {{begin}} to {{view}} products out of {{max+1}}</p>
+                </div>
+              </div>
+            </div>
+            <!-- end navigation -->
+          </div>
+        </div>
+        <!-- comparision -->
+      </div>
+    </div>
+  </section>
+  <!-- comparision start -->
+  <div class="detail-compare-modal position-fixed p-2 p-md-3">
+    <div class="w-100 d-flex justify-content-end" ng-click="closeCompare()">
+      <span class="material-icons"> close </span>
+    </div>
+    <div class="container col-lg-12">
+      <div class="row">
+        <div class="frame_title col-lg-2">
+          <div class="frame_feature">Feature</div>
+          <br />
+          <div class="frame_name">Name</div>
+          <br />
+          <div class="frame_price">Price</div>
+          <br />
+          <div class="frame_brand">Brand</div>
+          <br />
+          <div class="frame_rating">Rating</div>
+          <br />
+          <div class="frame_description">Description</div>
+        </div>
+        <div class="frame_content col-lg-10">
+          <div class="row">
+            <div class="frame_1 col-lg-4" ng-repeat="product in compareProduct">
+              <div class="frame_center">
+                <div class="frame_center_img">
+                  <img
+                    src="{{product.pic}}"
+                    alt=""
+                    class="img__full border__radius_10"
+                  />
+                </div>
+              </div>
+              <br />
+              <div class="frame_center">{{product.name}}</div>
+              <br />
+              <div class="frame_center">$ {{product.price_new}}</div>
+              <br />
+              <div class="frame_center">{{product.brand}}</div>
+              <br />
+              <div class="frame_center">4.9</div>
+              <br />
+              <div class="des_content">
+                <ul>
+                  <li ng-repeat="desc in product.desc">{{desc}}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="compare-modal position-fixed p-2 p-md-3">
+    <div class="d-flex justify-content-between align-items-center mb-1 mb-md-2">
+      <p class="mb-0 compare-modal_title">
+        Maximum of 3 products are allowed for comparison
+      </p>
+      <button class="p-2" ng-disabled="ableToCompare" ng-click="compare()">
+        Compare
+      </button>
+    </div>
+    <div class="compare-products">
+      <div class="item position-relative" ng-repeat="product in compareProduct">
+        <div class="item__product">
+          <span
+            class="add-to-compare d-flex align-items-center justify-content-center position-absolute"
+            ng-click="removeFromCompare($index)"
+          >
+            <span class="material-icons">
+              <i class="fa-solid fa-xmark"></i>
+            </span>
+          </span>
+          <a
+            class="img-container d-block mb-3"
+            href="#!/Product-category/{{product.id}}"
+          >
+            <img
+              ng-src="{{product.pic}}"
+              alt="{{product.name}}"
+              class="img__full border__radius_10"
+            />
+          </a>
+          <a href="#!/Product-category/{{product.id}}">
+            <p class="compaire__title">{{product.name}}</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

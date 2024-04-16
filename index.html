@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Gift shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="./public/css/bootstrap.css">
+    <link rel="stylesheet" href="./public/css/owl.carousel.css">
+    <link rel="stylesheet" href="./public/css/owl.theme.default.css">
+    <link rel="stylesheet" href="./sass/app.css">
+</head>
+<body ng-app="myApp">
+    <div class="box__croll" id="btnRoll">
+        <i class="fa-solid fa-angle-up"></i>
+    </div>
+<header>
+    <!-- Phần button scroll bar -->
+    <div class="header_infor bg_main">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-start">
+                    <i class="fa-solid fa-map-location-dot me-1"></i> 15, Pastuer, District 1, TP.HCM
+                </div>
+                <div class="col-md-4 align-items-center"> <i class="fa-solid fa-envelope me-1"></i> chibishop.support@gmail.com</div>
+                <div class="col-md-4 align-items-end ps-5"><i class="fa-solid fa-phone me-1"></i> 0909.234.449</div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar bg-white" id="navbar" ng-controller="navbar">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-between">
+                        <div class="logo">
+                            <img src="./public/image/logo/logo_gift.png" alt="Gift shop" class="logo_main">
+                        </div>
+                        <div class="input_group position-relative">
+                            <input type="text" name="mySearch" ng-model="mySearch" placeholder="Search....." class="input_search">
+                            <a href="#!Products"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        </div>
+            
+                        <div class="icon_menu d-flex justify-content-end align-items-center">
+                        <!-- search -->
+                        <div class="search dropdown me-3">
+                            <div class="mysearch position-relative" data-bs-toggle="collapse"
+                            data-bs-target="#collapseSea" aria-expanded="false" aria-controls="collapseNav">
+                                <i class="fa-solid fa-search"></i>
+                            </div>
+                            <div class="position-absolute collapse" id="collapseSea">
+                                <div class="input_group_mobile position-relative">
+                                    <input type="text" name="mySearch" ng-model="mySearch" class="input_search_mobile">
+                                    <a href="#!Products"><i class="fa-solid fa-magnifying-glass position-absolute"></i></a>
+                                </div>
+                            </div>
+                          </div>
+                        <!-- cart -->
+                          <div class="cart dropdown me-3">
+                            <div class="mycart position-relative" data-bs-toggle="collapse"
+                            data-bs-target="#collapseCart" aria-expanded="false" aria-controls="collapseNav">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <div class="cart_badge position-absolute">{{countCart}}</div>
+                            </div>
+                            <div class="position-absolute collapse" id="collapseCart">
+                              <div class="header_cart d-flex justify-content-between">
+                                <div class="title">Shopping cart</div>
+                              </div>
+                              <div class="content_cart border-top border-bottom">
+                                <p>You have {{countCart}} products in your cart</p>
+                                <table class="cart_table mt-1">
+                                    <tbody>
+                                        <tr ng-repeat="product in myCart">
+                                        <td>{{$index+1}}</td>
+                                        <td class="cart_img"><img src="{{product.pic}}" alt="{{product.name}}" class="img__full"></td>
+                                        
+                                        <td class="cart_name">{{product.name}}</td>
+                                        <td class="cart_price">$ {{product.price_new}}</td>
+                                        <td class="cart_quanity">X {{product.countItems}}</td>
+                                        <td class="cart_total">$ {{product.price_new * product.countItems}}</td>
+                                        <td class="cart_action">
+                                            <i class="fa-solid fa-trash" ng-click="removeItemCart(product)"></i>
+                                        </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                              </div>
+                              <div class="footer_cart d-flex justify-content-end mt-2">
+                                <!-- Phần hiện button check out -->
+                              </div>
+                            </div>
+                          </div>
+                          <!-- đăng nhập -->
+                          <div class="signin me-3">
+                             <a href="#!Signin"><i class="fa-solid fa-user"></i></a>
+                          </div>
+
+                          <!-- menu -->
+                          <div class="menu dropdown">
+                            <div class="menu_mobile position-relative" data-bs-toggle="collapse"
+                            data-bs-target="#collapseNav" aria-expanded="false" aria-controls="collapseNav">
+                                <i class="fa-solid fa-bars"></i>
+                            </div>
+                            <ul class="position-absolute collapse" id="collapseNav">
+                              <li ng-repeat="item in items"><a class="dropdown-item" href="{{item.link}}">{{item.title}}</a>
+                            </li>
+                            <div class="icon__media pe-5 mt-5">
+                                <a href="#">
+                                    <div class="icon"><i class="fa-brands fa-facebook-f"></i></div>
+                                </a>
+                                <a href="#">
+                                    <div class="icon"><i class="fa-brands fa-youtube"></i></div>
+                                </a>
+                                <a href="#">
+                                    <div class="icon"><i class="fa-brands fa-youtube"></i></div>
+                                </a>
+                                <a href="#">
+                                    <div class="icon"><i class="fa-brands fa-twitter"></i></div>
+                                </a>
+                            </div>
+                            </ul>
+
+                           
+                          </div>
+                       </div>
+                </div> 
+                <div class="col-12">
+                    <div class="sub_menu">
+                        <nav class="menu_navbar d-flex justify-content-between mt-2 pb-2 ps-2">
+                            <a ng-repeat="item in items"
+                            ng-class="{'active': item.id == states.activeItem}"
+                            ng-click="states.activeItem=item.id" href="{{item.link}}" class="menu_item">{{item.title}}</a>
+                        </nav> 
+                    </div>
+                </div> 
+            </div> 
+              
+        </div>
+    </nav>
+
+</header>
+
+<main class="content">
+    <div ng-view></div>
+</main>
+
+
+<!-- Code footer start -->
+<section class="subscribe p-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="col-12 text-center">
+                    <div class="sub_01">Subscribe to receive news</div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="col-12 text-center">
+                    <form action="" class="form__group_sub">
+                        <input type="email" class="input_email" placeholder="Enter your email">
+                        <button class="btn__sub">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="footer__address col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 mb-2">
+                <h2 class="title_footer">Gift Shop</h2>
+                <div class="address">
+                    <div class="mb-3"><i class="fa-solid fa-map-location-dot me-2"> </i><span>16, Pastuer, District
+                            1</span></div>
+                    <div class="mb-3"><i class="fa-solid fa-map-location-dot me-2"> </i><span>198, Le Van Luong,
+                            District 7</span></div>
+                    <div class="mb-3"><i class="fa-solid fa-map-location-dot me-2"> </i><span>02, Dai Quang Minh,
+                            District 2</span></div>
+                    <div class="mb-0"><i class="fa-solid fa-phone me-2"> </i><span>0909.234.449</span></div>
+                </div>
+                <div class="icon__media">
+                    <a href="#">
+                        <div class="icon"><i class="fa-brands fa-facebook-f"></i></div>
+                    </a>
+                    <a href="#">
+                        <div class="icon"><i class="fa-brands fa-youtube"></i></div>
+                    </a>
+                    <a href="#">
+                        <div class="icon"><i class="fa-brands fa-youtube"></i></div>
+                    </a>
+                    <a href="#">
+                        <div class="icon"><i class="fa-brands fa-twitter"></i></div>
+                    </a>
+                </div>
+            </div>
+            <div class="footer__support col-xl-2 col-lg-2 col-md-3 col-sm-6 col-6 mb-2">
+                <h2 class="title_footer">Support</h2>
+                <div class="support">
+                    <a href="#">Introduce</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Online transfer</a>
+                    <a href="#">Delivery and pick up</a>
+                    <a href="#">Return Policy</a>
+                    <a href="#">Warranty Policy</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="footer__category col-xl-2 col-lg-2 col-md-3 col-sm-6 col-6 mb-4">
+                <h2 class="title_footer">Category</h2>
+                <div class="category">
+                    <a href="#!Products">Teddy bear</a>
+                    <a href="#!Products">Personal items</a>
+                    <a href="#!Products">Was rose</a>
+                    <a href="#!Products">Home decor</a>
+                    <a href="#!Products">Business gifts</a>
+                </div>
+            </div>
+            <div class="footer__googlemap col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+                <h2 class="title_footer">Google map</h2>
+                <div class="google__map mt-2 mb-2">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.5397404105856!2d106.70073991532074!3d10.76991106225769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f41aa991181%3A0x509464971fc7e095!2zMTYgUGFzdGV1ciwgUGjGsOG7nW5nIE5ndXnhu4VuIFRow6FpIELDrG5oLCBRdeG6rW4gMSwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1653065564785!5m2!1svi!2s"
+                        style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade" class="img-fluid"></iframe>
+                </div>
+                <div class="copyright">Copyright. Gift Shop 2022</div>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+
+ <!-- Script default -->
+ <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+ <scriptpr type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></scriptpr>
+ <script src="./public/js/bootstrap.bundle.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-cookies.min.js"
+     data-require="angularjs@1.4" data-semver="1.4.4"></script>
+ <script src="./public/js/owl.carousel.min.js"></script>
+ <script src="./public/js/app.js"></script>
+</body>
+</html>

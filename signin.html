@@ -1,0 +1,40 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <form action="" name="mySigin" class="sign_in p-3">
+                    <div class="sign text-center border_bottom">
+                        <h3 class="color_red">Sign In</h3>
+                    </div>
+                    <div class="name mt-3">
+                        <h4 class="color_red">User name</h4>
+                        <input type="text" id="name" ng-model="UserName" required placeholder="Enter your username" class="input_controll">
+                        <div ng-show="mySigin.UserName.$dirty && mySigin.UserName.$invalid">
+                            <span class="color_red" ng-show="mySigin.UserName.$error.required">User name can be not blank!</span>
+                        </div>
+                    </div>
+            
+                    <div class="password mt-3">
+                        <h4 class="color_red">Password</h4>
+                        <input type="password" id="password" required    placeholder="Enter your password" class="input_controll">
+                    </div>
+            
+                    <div class="submit mt-3">
+                        <a href="#!/"><input type="submit" value="Sign in" id="submit"></a>
+                    </div>
+            
+                    <div class="google">
+                        <span class="or">or</span>
+                        <a href="https://accounts.google.com/signin/v2/identifier?hl=vi&continue=https%3A%2F%2Fwww.google.com%2F&ec=GAlAmgQ&flowName=GlifWebSignIn&flowEntry=AddSession" target="_blank"><i class="fa-brands fa-google-plus-g"></i>Sign in with gmail google ?</a>
+                    </div>
+                    
+                    <div class="create">
+                        <a href="#!Signup">Create new account ?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+        
+</section>
